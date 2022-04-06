@@ -4,7 +4,7 @@ on: delete
 
 jobs:
   run:
-    if: github.event.ref_type == 'branch'
+    if: ${{ (github.event.ref_type == 'branch' && startsWith(github.event.ref, 'tmp/')) }}
     runs-on: ubuntu-latest
     timeout-minutes: 1
 
