@@ -1,0 +1,16 @@
+name: push event
+
+on:
+  push:
+    branches:
+      - develop
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 1
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - run: echo "push event on develop"
